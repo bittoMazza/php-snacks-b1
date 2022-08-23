@@ -18,33 +18,36 @@
                     "result_2" => 66,
                 ],
                 [
-                    "team_1" => 'A',
-                    "team_2" => 'B',
+                    "team_1" => 'Cesena',
+                    "team_2" => 'Rimini',
                     "result_1" => 40,
                     "result_2" => 66,
                 ],
                 [
-                    "team_1" => 'C',
-                    "team_2" => 'D',
+                    "team_1" => 'Sammaurese',
+                    "team_2" => 'Forlì',
                     "result_1" => 55,
                     "result_2" => 88,
                 ],
                 [
-                    "team_1" => 'E',
-                    "team_2" => 'F',
+                    "team_1" => 'SChiappe',
+                    "team_2" => 'Perdenti assicurati',
                     "result_1" => 20,
                     "result_2" => 30,
                 ],
-            ]
-        ?>
-        <p>
-            <?php
-                for($i=0;$i<count($games);$i++)
+            ];
+                
+            for($i=0;$i<count($games);$i++)
                 {
-                    echo $games[$i]['team_1'] . ' - ' . $games[$i]['team_2'] . ' | ' . $games[$i]['result_1'] .'-'. $games[$i]['result_2']; 
-                }
+        ?>
+        <h4>
+            <?php
+                echo $games[$i]['team_1'] . ' - ' . $games[$i]['team_2'] . ' | ' . $games[$i]['result_1'] .'-'. $games[$i]['result_2'];
             ?>
-        </p>
+        </h4>
+        <?php
+                }
+        ?>
     </div>
     <div>
         <h2>SNACK 2</h2>
