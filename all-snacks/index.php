@@ -26,8 +26,8 @@
                 [
                     "team_1" => 'Sammaurese',
                     "team_2" => 'Forlì',
-                    "result_1" => 55,
-                    "result_2" => 88,
+                    "result_1" => 00,
+                    "result_2" => 00,
                 ],
                 [
                     "team_1" => 'SChiappe',
@@ -42,7 +42,15 @@
         ?>
         <h4>
             <?php
-                echo $games[$i]['team_1'] . ' - ' . $games[$i]['team_2'] . ' | ' . $games[$i]['result_1'] .'-'. $games[$i]['result_2'];
+                if(($games[$i]['result_1'] != 0) || ($games[$i]['result_2'] != 0)) 
+                {
+                    $result = $games[$i]['result_1'] .'-'. $games[$i]['result_2'];
+                }
+                else
+                {
+                    $result = 'Partita ancora da giocare';
+                }
+                echo $games[$i]['team_1'] . ' - ' . $games[$i]['team_2'] . ' | ' . $result;
             ?>
         </h4>
         <?php

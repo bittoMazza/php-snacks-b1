@@ -34,7 +34,7 @@
                 [
                     "name" => "Alex",
                     "second_name" => "Ricci",
-                    "votes" => [3,8,7,4,9,5,7,5]
+                    "votes" => []
                 ],
             ];
 
@@ -43,7 +43,12 @@
         ?>
         <h3>
             <?php
-                echo $students[$i]['name'] . '  ' . $students[$i]['second_name'] . ' - Media scolastica : ' . (array_sum($students[$i]['votes']) / count($students[$i]['votes']));
+                $average = ' Lo studente non ha voti';
+                if(count($students[$i]['votes']) > 0)
+                {
+                    $average = (array_sum($students[$i]['votes']) / count($students[$i]['votes']));    
+                }
+                echo $students[$i]['name'] . '  ' . $students[$i]['second_name'] . ' --- Media scolastica : ' . $average;
             ?>
         </h3>
         <?php
