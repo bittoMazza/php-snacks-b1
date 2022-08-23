@@ -139,7 +139,46 @@
     </div>
     <div>
         <h2>SNACK 7</h2>
-        
+        <?php
+            $students = [
+                [
+                    "name" => "Roberto",
+                    "second_name" => "Mazza",
+                    "votes" => [8,3,9,2,6,4,2,8,9]
+                ],
+                [
+                    "name" => "Luca",
+                    "second_name" => "Rossi",
+                    "votes" => [8,4,7,2,5,4,8,2,8,9]
+                ],
+                [
+                    "name" => "Mario",
+                    "second_name" => "Bianchi",
+                    "votes" => [8,3,9,2,6,4]
+                ],
+                [
+                    "name" => "Edoardo",
+                    "second_name" => "Maioli",
+                    "votes" => [8,3,8,2,8,9]
+                ],
+                [
+                    "name" => "Alex",
+                    "second_name" => "Ricci",
+                    "votes" => [3,8,7,4,9,5,7,5]
+                ],
+            ];
+
+            for($i=0;$i < count($students);$i++)
+            {
+        ?>
+        <h3>
+            <?php
+                echo $students[$i]['name'] . '  ' . $students[$i]['second_name'] . ' - Media scolastica : ' . (array_sum($students[$i]['votes']) / count($students[$i]['votes']));
+            ?>
+        </h3>
+        <?php
+            }
+        ?>
     </div>
 </body>
 </html>
