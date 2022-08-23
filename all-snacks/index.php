@@ -55,7 +55,7 @@
             $name = $_GET['name'];
             $email = $_GET['email'];
             $age = $_GET['age'];
-            if( (strlen($name) > 3) && (strpos($email,'@') > 0 && strpos($email,'.') > 2 ) && (is_numeric($age)))
+            if( (strlen($name) > 3 && !is_null($name) && !empty($name)) && ((strpos($email,'@') > 0 && strpos($email,'.') > 2) && !empty($email)) && (is_numeric($age) && !empty($age)))
             {
                 echo 'Accesso riuscito';
             }
@@ -67,7 +67,8 @@
     <div>
         <h2>SNACK 4</h2>
         <?php
-            var_dump(getarray(0,5052,15));  
+            var_dump(getarray(0,5052,15)); 
+             
             function getarray($min,$max,$numValue){
                 $newArray = [];
                 while( count($newArray) < $numValue ){
